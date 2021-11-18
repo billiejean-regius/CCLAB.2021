@@ -68,8 +68,10 @@ h1 {
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
+  z-index: -1;
 }
 
 .bkgContent {
   position: relative;
+  z-index: -1;
 }
