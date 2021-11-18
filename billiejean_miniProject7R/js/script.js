@@ -47,8 +47,13 @@ function setup() {
   let canvas = createCanvas(800, 500);
   canvas.id("p5-canvas");
   background(28, 27, 71);
-  button = createButton('create space');
-  button.position(500, 650);
+  button = createButton("create space");
+  button.mousePressed(createSpace);
+  //button.size(200,100);
+  //button.position(10,10);
+  //button.style("font-family", "Gamja Flower");
+  //button.style("font-size", "48px");
+
 
   //extraCanvas = createGraphics(windowWidth - 10, windowHeight - 10);
   //extraCanvas.clear();
@@ -56,6 +61,13 @@ function setup() {
   for (let i = 0; i < 300; i++) {
     stars[i] = new Star();
   }
+}
+
+function createSpace() {
+  particles.push(new Particle(random(width), random(height), "ellipse", mandarin));
+  particles.push(new Particle(random(width), random(height), "ellipse", lavender));
+  particles.push(new Particle(random(width), random(height), "circle", lightgreen));
+  particles.push(new Particle(random(width), random(height), "circle", kido));
 }
 
 function draw() {
@@ -75,12 +87,14 @@ function draw() {
   }
 
   // generate
-  if (mouseIsPressed) {
-    particles.push(new Particle(mouseX, mouseY, "ellipse", mandarin));
-    particles.push(new Particle(mouseX, mouseY, "ellipse", lavender));
-    particles.push(new Particle(mouseX, mouseY, "circle", lightgreen));
-    particles.push(new Particle(mouseX, mouseY, "circle", kido));
-  }
+  //if (mouseIsPressed) {
+    //particles.push(new Particle(mouseX, mouseY, "ellipse", mandarin));
+    //particles.push(new Particle(mouseX, mouseY, "ellipse", lavender));
+    //particles.push(new Particle(mouseX, mouseY, "circle", lightgreen));
+    //particles.push(new Particle(mouseX, mouseY, "circle", kido));
+  //}
+
+
 
   // FLOW FIELDS
   if (DISPLAY_FLOWFIELD) {
@@ -102,6 +116,8 @@ function draw() {
       }
     }
   }
+
+
 
   // OBJECTS
 
