@@ -47,12 +47,20 @@ function setup() {
   let canvas = createCanvas(800, 500);
   canvas.id("p5-canvas");
   background(28, 27, 71);
-  button = createButton("create space");
-  button.mousePressed(createSpace);
-  button.size(200,100);
-  button.position(100,300);
-  button.style("font-family", "Gamja Flower");
-  button.style("font-size", "38px");
+
+  button1 = createButton("create space");
+  button1.mousePressed(createSpace);
+  button1.size(200,100);
+  button1.position(100,300);
+  button1.style("font-family", "Gamja Flower");
+  button1.style("font-size", "38px");
+
+  button2 = createButton("erase space");
+  button2.mousePressed(eraseSpace);
+  button2.size(200,100);
+  button2.position(1250,300);
+  button2.style("font-family", "Gamja Flower");
+  button2.style("font-size", "38px");
 
 
   //extraCanvas = createGraphics(windowWidth - 10, windowHeight - 10);
@@ -70,12 +78,16 @@ function createSpace() {
   particles.push(new Particle(random(width), random(height), "circle", kido));
 }
 
+function eraseSpace() {
+    background(28, 27, 71, 20);
+}
+
 function draw() {
   //image(extraCanvas, 0, 0);
   //background(28, 27, 71);
-  if (keyIsPressed && key == " ") {
-    background(28, 27, 71, 20);
-  }
+  //if (keyIsPressed && key == " ") {
+    //background(28, 27, 71, 20);
+  //}
 
   ///fill(0, 255, 0);
   //textSize(40);
