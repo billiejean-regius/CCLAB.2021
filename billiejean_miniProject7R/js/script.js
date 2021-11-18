@@ -49,10 +49,10 @@ function setup() {
   background(28, 27, 71);
   button = createButton("create space");
   button.mousePressed(createSpace);
-  //button.size(200,100);
-  //button.position(10,10);
-  //button.style("font-family", "Gamja Flower");
-  //button.style("font-size", "48px");
+  button.size(200,100);
+  button.position(100,300);
+  button.style("font-family", "Gamja Flower");
+  button.style("font-size", "38px");
 
 
   //extraCanvas = createGraphics(windowWidth - 10, windowHeight - 10);
