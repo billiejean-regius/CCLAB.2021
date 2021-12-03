@@ -55,10 +55,10 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'text',
+    text: '"Bang." "Bang." "Bang." The repeated crack of a white-knuckle fist rings out, stirring you from your deep slumber. ',
     options: [
       {
-        text: '...',
+        text: 'Sleep',
         setState: { neutral: true },
         nextText: 2
       },
@@ -78,10 +78,10 @@ const textNodes = [
   },
   {
     id: 2,
-    text: 'text',
+    text: 'Brows furrowing, you curl tighter into the warmth of your covers, a sweet and pervasive darkness lulling you back to sleep.',
     options: [
       {
-        text: '...',
+        text: 'Sleep',
         setState: { neutral: true },
         nextText: 3
       },

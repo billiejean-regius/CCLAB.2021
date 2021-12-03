@@ -53,8 +53,21 @@ canvas {
   /**background: pink;**/
 }
 
+.mOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  /**/
+  width: 250px;
+  height: 800px;
+  }
+
 .mBtn {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 75px;
   width: 222px;
   height: 138px;
   /**/
