@@ -25,18 +25,21 @@ canvas {
 }
 
 #text {
+  color: white;
 }
 
 .wrapper {
   position: fixed;
-  bottom: 200px;
-  width: 800px;
-  height: 150px;
-  /**/
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid rgb(245, 212, 0);
+  text-align: center;
+  bottom: 222px;
+  width: 800px;
+  height: 222px;
+  /**/
+  border-radius: 20px;
+  background-image: url("media/img/textbox.png");
 }
 
 #mDock {
@@ -52,12 +55,16 @@ canvas {
 
 .mBtn {
   margin: 20px;
-  width: 233px;
+  width: 222px;
   height: 138px;
   /**/
-  border-radius: 10px;
+  border-radius: 20px;
   border: 5px solid rgb(245, 212, 0);
   background: rgb(255, 221, 0);
+}
+
+.mbtn:hover {
+  box-shadow: 0px 0px 20px 1px rgb(185, 22, 185);
 }
 
 #cDock {
@@ -98,20 +105,38 @@ tr.spaceUnder>td {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 20px;
   width: 138px;
-  height: 233px;
+  height: 222px;
   /**/
-  border-radius: 10px;
+  border-radius: 20px;
   border: 5px solid rgb(245, 212, 0);
-  background: rgb(255, 221, 0);
+  background-image: url("media/img/card1.png");
+  background-position: center;
   /**/
   position: relative;
   top: 0;
   left: 0;
   transition: top ease 0.8s;
   transition: left ease 0.8s;
+  /**/
+  color: white;
+  font-size: 40px;
 }
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(255, 221, 0, 0.50);
+}
+
 
 .btn:hover {
   top: -20px;
