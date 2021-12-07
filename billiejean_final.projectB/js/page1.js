@@ -203,16 +203,6 @@ class Particle {
   }
 }
 
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
-
-let state = {}
-
-function startGame() {
-  state = {}
-  showTextNode(1) //Starting text node
-}
-
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
@@ -293,19 +283,22 @@ const textNodes = [
   },
   {
     id: 3,
-    text: 'text. ',
+    text: '"Bang." "Bang." "Bang." You lurch forward, the aggrivated bark of an indecipherable demand now pricking your ears.',
     options: [
       {
-        text: 'text',
+        text: 'Sleep',
+        setState: { noOption: true },
         nextText: 4
       },
       {
         text: 'text',
-        nextText: 5
+        //nextText:
+        setState: { noOption: true },
       },
       {
         text: 'text',
-        nextText: 6
+        //nextText:
+        setState: { noOption: true },
       },
       {
         text: '',
@@ -373,7 +366,7 @@ const textNodes = [
     text: 'text.',
     options: [
       {
-        text: 'Restart',
+        text: '',
         nextText: -1
       }
     ]
