@@ -5,7 +5,7 @@ let freqTime = 0.05; // *****
 let particles = [];
 let angles = [];
 
-let fly;
+//let fly;
 let gif;
 let page_mouseX = 0;
 let page_mouseY = 0;
@@ -203,6 +203,16 @@ class Particle {
   }
 }
 
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
+
+let state = {}
+
+function startGame() {
+  state = {}
+  showTextNode(1) //Starting text node
+}
+
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
@@ -283,124 +293,110 @@ const textNodes = [
   },
   {
     id: 3,
-    text: '"Bang." "Bang." "Bang." You lurch forward, the aggrivated bark of an indecipherable demand now pricking your ears.',
+    text: '"Bang." "Bang." "Bang." You lurch forward, warmth leaving your body as the aggrivated bark of an indecipherable demand prickles your ears.',
     options: [
       {
         text: 'Sleep',
-        setState: { noOption: true },
+        setState: { neutral : true },
         nextText: 4
       },
       {
-        text: 'text',
-        //nextText:
-        setState: { noOption: true },
-      },
-      {
-        text: 'text',
-        //nextText:
-        setState: { noOption: true },
+        text: 'Get Up',
+        setState: { neutral : true },
+        nextText: 5
       },
       {
         text: '',
         setState: { noOption: true },
+        //nextText:
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
       }
     ]
   },
   {
     id: 4,
-    text: 'text.',
+    text: 'Guilt sits heavy on your shoulders, you know who it was that came so late in the night... The Watchmen. It was none of your concern though, was it?',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Sleep',
+        setState: { happy: true },
+        nextText: 6
+      },
+      {
+        text: 'Get Up',
+        //nextText:
+        setState: { chaotic: true },
+        nextText: 5
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
       }
     ]
   },
   {
     id: 5,
-    text: 'text.',
+    text: 'The bed creeks as you lift yourself from it, your feet shifting on the cold floor. "Crack!" The sound of a door slamming open echoes from outside of the apartment.',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Back to Sleep',
+        setState: { happy: true },
+        nextText: 6
+      },
+      {
+        text: 'Go Look',
+        //nextText:
+        setState: { chaotic: true },
+        nextText: 6
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
       }
     ]
   },
   {
     id: 6,
-    text: 'text.',
-    options: [
-      {
-        text: 'text',
-        nextText: 7
-      }
-    ]
-  },
-  {
-    id: 7,
-    text: 'text.',
-    options: [
-      {
-        text: 'text',
-        nextText: 8
-      },
-      {
-        text: 'text',
-        requiredState: (currentState) => currentState.event,
-        nextText: 9
-      },
-      {
-        text: 'text',
-        requiredState: (currentState) => currentState.item,
-        nextText: 10
-      },
-      {
-        text: 'text',
-        requiredState: (currentState) => currentState.event,
-        nextText: 11
-      }
-    ]
-  },
-  {
-    id: 8,
-    text: 'text.',
+    text: 'To Be Continued',
     options: [
       {
         text: '',
-        nextText: -1
+        setState: { happy: true },
+      },
+      {
+        text: '',
+        //nextText:
+        setState: { chaotic: true },
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
+      },
+      {
+        text: '',
+        setState: { noOption: true },
+        //nextText:
       }
     ]
   },
-  {
-    id: 9,
-    text: 'text.',
-    options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
-    ]
-  },
-  {
-    id: 10,
-    text: 'text.',
-    options: [
-      {
-        text: 'Restart',
-        nextText: -1
-      }
-    ]
-  },
-  {
-    id: 11,
-    text: 'text',
-    options: [
-      {
-        text: 'text.',
-        nextText: -1
-      }
-    ]
-  }
+
 ]
 
 startGame()
